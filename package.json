@@ -1,19 +1,39 @@
 {
-  "name": "discord-birthday-bot",
+  "name": "hermes",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "engines": {
+    "node": "11.x",
+    "npm": "*"
   },
-  "keywords": [],
-  "author": "Rudy Murer <rudy.murer.pro@gmail.com>",
-  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
   "dependencies": {
+    "@keyv/sqlite": "^2.0.2",
     "axios": "^0.20.0",
     "discord.js": "^11.5.1",
     "eslint": "^6.7.2",
+    "keyv": "^4.0.1",
     "sequelize": "^5.21.3",
-    "sqlite3": "^4.1.1"
-  }
+    "sqlite3": "^4.2.0"
+  },
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/Murerr/hermes-bot.git"
+  },
+  "keywords": [
+    "heroku",
+    "discord.js",
+    "scryfall",
+    "mtg"
+  ],
+  "author": "Rudy Murer <rudy.murer.pro@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Murerr/hermes-bot/issues"
+  },
+  "homepage": "https://github.com/Murerr/hermes-bot.git#readme"
 }

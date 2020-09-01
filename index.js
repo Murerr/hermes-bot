@@ -35,11 +35,7 @@ client.on('message', message => {
 client.once('ready', () => {
 	// List Channels
 	// console.log(client.channels);
-
 	// bot-playground channel = 668819338995695616
-	client.channels.fetch('668819338995695616').then((channel) => {
-		// TODO GET ALL SETS Then for each new set Send a message AS SET NAME as been released
-		// TODO then sets marked as not completed for each card of that set marked as not spoiled publish it !
-		client.commands.get('newcards').execute(channel.client);
-	});
+	const channel = client.channels.get('668819338995695616');
+	client.commands.get('newcards').execute(channel);
 });
