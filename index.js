@@ -1,6 +1,8 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const { prefix, token } = require('./config.json');
+const token = process.env.DISCORD_TOKEN;
+const channelID = process.env.CHANNEL_ID;
+const prefix = process.env.PREFIX;
 
 // Discord.JS
 const client = new Discord.Client();
@@ -14,7 +16,9 @@ for (const file of commandFiles) {
 	console.log('[LOADING]', file);
 }
 
-client.login(token).catch(error => console.log(error));
+client.login(token).catch(error => {
+	console.log(error);
+});
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -32,10 +36,10 @@ client.on('message', message => {
 	}
 });
 
-client.once('ready', () => {
-	// List Channels
-	// console.log(client.channels);
-	// bot-playground channel = 668819338995695616
-	const channel = client.channels.get('668819338995695616');
-	client.commands.get('newcards').execute(channel);
+client.on('ready', () => {
+	console.log('[Ready!]');
+	const channel = client.channels.get(channelID);
+	client.commands.get('newcards').execute(channel).then(() => {
+		// client.destroy();
+	});
 });

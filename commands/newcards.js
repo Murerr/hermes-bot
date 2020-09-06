@@ -4,10 +4,9 @@ const axios = require('axios');
 module.exports = {
 	name: 'newcards',
 	description: 'Retrieve all new cards',
-	usage: '',
+	usage: 'command',
 	cooldown: 1,
 	execute: async function(channel, args) {
-
 		const current_date = new Date().toISOString().slice(0, 10);
 		axios.get('https://api.scryfall.com/cards/search?order=spoiled&q=date>=' + current_date)
 			.then(response => {
@@ -37,7 +36,7 @@ module.exports = {
 					data.forEach((element) => {
 						Database.cards.get(element.id).then(result => {
 							if (result === undefined) {
-								Database.cards.set(element.id, element).then(() => {
+								Database.cards.set(element.id, element.name).then(() => {
 									channel.send(
 										new Discord.RichEmbed()
 											.setColor('#800080')

@@ -21,6 +21,10 @@ deploy/deploy_key.pub
 docs/docs.json
 webpack/
 *.sqlite
+.env
 
 # Idea
 .idea/
+
+# Discord
+config.json

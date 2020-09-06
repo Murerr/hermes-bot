@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- node
+cache: npm
+script: ls -l
+deploy:
+  provider: heroku
+  api_key:
+    secure: c1Iaiwe4BC0J471CE0UKxOmmopB3vLbwr5lKqFT+G48mDAM0aoMHV7fseEj4Touv4Y6wWOKXM1tgNis5uDiZq9IgCTUYR9QFIOt0bmkEcL1ETnaaQC2gRHrdyIGGQV078l/02DhUBjpTuyszWISWbguRPQqRrgbxkd6ldSYs1+WKTXt0Z22CEEEOkRepf5mwjwupNVctviUJ0aNbrx0VSNKK2Sa7+aAvezeKDVn7HlX5q7d23A/0aEwQcTPhzT/CL3QnHh3e5nEv7fInFlM8vD3Mz5CRpGk0EuKtPMDJ1YlnIRtdFDyVCIEHb05mdzp+ZHy5HJutBGPT8Ejz8d9DTsVl3bNCN8odTsGopGdmk26DR95p5YJqOpEQCzmqBVVgwzLB4+YcD/FdkK07/dSd3zezC7c6p1JSIYOfjCnYhualjimcvVFw3WWv1Xb4wM/Cbc9sui7/kAKNNYFlCIHoSxxw8VyYIKjAro87ZZZKLwvTANjfmszXq2iIRtUyxO2Nu0iWLqjU+qfVkdkyfncBiIOSWX7e/oGsahfNn89UJ3Kd2rSJnD8/nGaLX2saotrHcOLtsYJa/GjbhzVdaYrSTtVYm2DJtWmOe0ffJtt3c2kOqp+mm7u5PlZ70LWbkFFzHhilEUX3sE3+6Xyi8wpxO50u4pKYUKKPyBNCj4DXsOs=
+  app: hermes-bot-1
+  strategy: git
+  on:
+    branch: master

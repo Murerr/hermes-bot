@@ -8,21 +8,21 @@
     "npm": "*"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --timeout 8000 --exit",
     "start": "node index.js"
   },
   "dependencies": {
-    "@keyv/sqlite": "^2.0.2",
+    "@keyv/postgres": "^1.0.16",
     "axios": "^0.20.0",
     "discord.js": "^11.5.1",
     "eslint": "^6.7.2",
     "keyv": "^4.0.1",
-    "sequelize": "^5.21.3",
-    "sqlite3": "^4.2.0"
+    "mocha": "^8.1.3",
+    "pg": "^8.3.3"
   },
   "repository": {
-  "type": "git",
-  "url": "git+https://github.com/Murerr/hermes-bot.git"
+    "type": "git",
+    "url": "git+https://github.com/Murerr/hermes-bot.git"
   },
   "keywords": [
     "heroku",
@@ -35,5 +35,8 @@
   "bugs": {
     "url": "https://github.com/Murerr/hermes-bot/issues"
   },
-  "homepage": "https://github.com/Murerr/hermes-bot.git#readme"
+  "homepage": "https://github.com/Murerr/hermes-bot.git#readme",
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
 }
