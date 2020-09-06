@@ -30,12 +30,15 @@ module.exports = {
 									console.log(error);
 								});
 							}
+						}).catch(error => {
+							console.log(error);
 						});
 					});
 
 					data.forEach((element) => {
 						Database.cards.get(element.id).then(result => {
 							if (result === undefined) {
+								const image_uri = element.image_uris && element.image_uris.png ? element.image_uris.png : element.card_faces[0].image_uris.png;
 								Database.cards.set(element.id, element.name).then(() => {
 									channel.send(
 										new Discord.RichEmbed()
@@ -44,13 +47,15 @@ module.exports = {
 											.setDescription(element.oracle_text)
 											.addField('Set', element.set_name, true)
 											.setURL(element.scryfall_uri)
-											.setImage(element.image_uris.png)
+											.setImage(image_uri)
 											.setTimestamp(),
 									);
 								}).catch(error => {
 									console.log(error);
 								});
 							}
+						}).catch(error => {
+							console.log(error);
 						});
 					});
 				}

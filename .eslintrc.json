@@ -6,7 +6,7 @@
 		"mocha": true
 	},
 	"parserOptions": {
-		"ecmaVersion": 2019
+		"ecmaVersion": 2020
 	},
 	"rules": {
 		"brace-style": ["error", "1tbs", { "allowSingleLine": true }],
@@ -17,7 +17,7 @@
 		"dot-location": ["error", "property"],
 		"handle-callback-err": "off",
 		"indent": ["error", "tab"],
-		"max-nested-callbacks": ["error", { "max": 4 }],
+		"max-nested-callbacks": ["error", { "max": 8 }],
 		"max-statements-per-line": ["error", { "max": 2 }],
 		"no-console": "off",
 		"no-empty-function": "error",
